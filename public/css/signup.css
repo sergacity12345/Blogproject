@@ -1,0 +1,195 @@
+.login-form {
+    /* margin-top: 10rem!important; */
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.form-control {
+margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+display: block;
+width: 100%;
+margin-bottom: 0.25rem;
+}
+
+.form-control input,
+.form-control textarea {
+border: 1px solid #a1a1a1;
+font: inherit;
+border-radius: 2px;
+}
+
+/* .form-control input:focus,
+.form-control textarea:focus {
+outline-color: #00695c;
+} */
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+border-color: red;
+}
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Custom properties */
+:root{
+    /* --light-color: #fff !important; */
+    --light-color-alt: #afb6cd;
+    --primary-background-color: #131417;
+    --secondary-background-color: #252830;
+    --hover-light-color: var(--light-color);
+    --hover-dark-color: var(--primary-background-color);
+    --gradient-color: linear-gradient(
+        115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    --transparent-light-color: rgba(255,255,255,.05);
+    --transparent-dark-color: rgba(0,0,0,.75);
+    --font-family: 'Poppins', sans-serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+    --gap: 2rem;
+    --margin-sm: 2rem;
+    --margin-md: 3rem;
+    --item-min-height-sm: 20rem;
+    --item-min-height-md: 30rem;
+}
+
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: none;
+    /* background-color: var(--primary-background-color); */
+    letter-spacing: 1px;
+    transition: background-color .25s,color .25s;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn-home{
+    margin:  0 2rem;
+}
+
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+.centered {
+    text-align: center;
+  }
+
+
+/* Reusable classes */
+.container{
+    max-width: 160rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+}
+
+.logo{
+    font-size: var(--font-size-md);
+    color: var(--light-color);
+}
+
+.menu{
+    position: absolute;
+    top: 8.5rem;
+    right: 1.5rem;
+    width: 23rem;
+    padding: 1.5rem;
+    background-color:var(--secondary-background-color);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .25s ease-in;
+}
+
+
+
+
+.btn{
+    cursor: pointer;
+}
+
+.list-link:hover,
+.btn:hover,
+.btn-home:hover,
+.btn:hover span{
+    color: var(--light-color);
+}
+
+.moon-icon{
+    display: none;
+}
+
+.light-theme .sun-icon{
+    display: none;
+}
+
+.light-theme .moon-icon{
+    display: block;
+}
+
+
+.headline span{
+    height: inherit;
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #00695c;
+  color: white;
+}
+
+
