@@ -1,9 +1,13 @@
 .login-form {
     /* margin-top: 10rem!important; */
-    width: 20rem;
+    width: 30rem;
     max-width: 90%;
     margin: auto;
     display: block;
+}
+
+.product-form{
+    margin-top: 10rem;
 }
 
 .form-control {
@@ -193,3 +197,28 @@ button {
 }
 
 
+
+
+.user-message{
+    margin: auto;
+    width: 90%;
+    border: 1px solid blue;
+    background-color: blueviolet;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.user-meesage--error{
+    border-color: red;
+    background-color: red;
+    color: white;
+}
+
+
+@media screen and (min-width: 508px) {
+    .user-message{
+        margin: auto;
+        width: 30rem;
+    }
+}

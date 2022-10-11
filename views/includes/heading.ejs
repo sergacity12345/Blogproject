@@ -1,0 +1,74 @@
+<!-- Header -->
+<header class="header" id="header">
+
+    <nav class="navbar container">
+        <a href="#">
+            <h2 class="logo">Business Update</h2>
+        </a>
+
+        <div class="menu" id="menu">
+            <ul class="list">
+                <li class="list-item">
+                    <a href="#" class="list-link current">Home</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">Categories</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">Reviews</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">News</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">Membership</a>
+                </li>
+                <% if(isLoggedIn){%>
+                    <li class="list-item">
+                        <a href="/admin" class="list-link">Admin</a>
+                    </li>
+                    <!-- <li class="list-item">
+                        <a href="logout" class="list-link">Log Out</a>
+                    </li> -->
+                    
+                <%}%>
+                <% if(!isLoggedIn){%> 
+                    <li class="list-item screen-lg-hidden">
+                        <a href="login" class="list-link">Log in</a>
+                    </li>
+                    <li class="list-item screen-lg-hidden">
+                        <a href="signup" class="list-link">Sign up</a>
+                    </li>
+                <%}%>    
+            </ul>
+        </div>
+
+        <div class="list list-right">
+            <button class="btn place-items-center" id="theme-toggle-btn">
+                <i class="fa fa-sun-o sun-icon"></i>
+                <i class="fa fa-moon-o moon-icon"></i>
+            </button>
+
+            <button class="btn place-items-center" id="search-icon">
+                <i class="fa fa-search"></i>
+            </button>
+
+            <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
+                <i class="fa fa-menu-3-line open-menu-icon">O</i>
+                <i class="ri-close-line close-menu-icon">X</i>
+            </button>
+            <% if(!isLoggedIn){%>
+                <a href="login" class="list-link screen-sm-hidden">Log in</a>
+                <a href="signup" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                    <span>Sign up</span>
+                </a>
+            <%}else{%>
+                <a href="add-blog" class="list-link screen-sm-hidden"><%= userId%></a>
+                <a href="logout" class="list-link screen-sm-hidden">Logs Out</a>
+            <%}%>
+            
+        </div>
+
+    </nav>
+
+</header>

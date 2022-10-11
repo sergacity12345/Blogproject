@@ -12,22 +12,25 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
+    resetToken: String,
+    resetTokenExp : Date,
     phone:{
       type:String,
       required:true
-    },
-    post: {
-        items: [
-          {
-            postId: {
-              type: Schema.Types.ObjectId,
-              ref: 'Product',
-              required: true
-            },
-            quantity: { type: Number, required: true }
-          }
-        ]
-      }
+    }
+    // post: {
+    //     items: [
+    //       {
+    //         postId: {
+    //           type: Schema.Types.ObjectId,
+    //           ref: 'Post',
+    //           required: true
+    //         },
+    //         quantity: { type: Number, required: true }
+    //       }
+    //     ]
+    //   }
 })
 
 module.exports = mongoose.model('User', userSchema);
+

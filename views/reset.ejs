@@ -21,14 +21,7 @@
         </header>
 
     <main>
-        
-            <% if (errorMessage) {%>
-                <div class="user-message user-meesage--error">
-                    <%= errorMessage %>
-                </div>
-            <%}%>
-        
-        <form class="login-form" action="/index" method="POST">
+        <form class="login-form" action="/reset" method="POST">
             <div class="form-control">
                 <label for="email">E-Mail</label>
                 <input 
@@ -36,19 +29,18 @@
                     name="email" 
                     id="email" >
             </div>
-            <div class="form-control">
-                <label for="password">Password</label>
+            <!-- <div class="form-control">
+                <label for="password">New Password</label>
                 <input 
                     type="password" 
                     name="password" 
                     id="password" >
-            </div>
-            <button class="btn" type="submit">Login</button>
+            </div> -->
+            <button class="btn" type="submit">Reset Password</button>
         </form>
-        <div class="centered">
+        <!-- <div class="centered">
             <a href="/reset">Reset Password</a>
-        </div>
+        </div> -->
     </main>
 </body>
 </html>
-

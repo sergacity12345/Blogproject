@@ -42,67 +42,70 @@
 
         <div class="featured-articles-container container d-grid">
 
-            <div class="featured-content d-grid">
+            <% if (post.length > 0) { %>
+                <div class="featured-content d-grid">
 
-                <div class="headline-banner">
-                    <h3 class="headline fancy-border">
-                        <span class="place-items-center">Breaking news</span>
-                    </h3>
-                    <span class="headline-description">Apple announces a new partnership...</span>
+                    <div class="headline-banner">
+                        <h3 class="headline fancy-border">
+                            <span class="place-items-center">Breaking news</span>
+                        </h3>
+                        <span class="headline-description">Apple announces a new partnership...</span>
+                    </div>
+                    <% for (let product of post) { %>
+                        <a href="/blog-post" class="article featured-article featured-article-1">
+                            <img src="./images/featured/featured-1.jpg" alt="" class="article-image">
+                            <span class="article-category"><%= product.category %></span>
+
+                            <div class="article-data-container">
+
+                                <div class="article-data">
+                                    <span><%= product.createdAt %></span>
+                                    <span class="article-data-spacer"></span>
+                                    <span>8 Min read</span>
+                                </div>
+
+                                <h3 class="title article-title"><%= product.title %></h3>
+
+                            </div>
+                        </a>
+                    <%}%>
+
+                    <!-- <a href="./post.html" class="article featured-article featured-article-2">
+                        <img src="./images/featured/featured-2.jpg" alt="" class="article-image">
+                        <span class="article-category">Food</span>
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+                                <span>Dec 6th 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>4 Min read</span>
+                            </div>
+
+                            <h3 class="title article-title">Fine dining 101</h3>
+
+                        </div>
+                    </a> -->
+
+                    <!-- <a href="./post.html" class="article featured-article featured-article-3">
+                        <img src="./images/featured/featured-3.jpg" alt="" class="article-image">
+                        <span class="article-category">Health</span>
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+                                <span>Dec 5th 2021</span>
+                                <span class="article-data-spacer"></span>
+                                <span>5 Min read</span>
+                            </div>
+
+                            <h3 class="title article-title">Natural fat burner</h3>  
+
+                        </div>
+                    </a> -->
+
                 </div>
-
-                <a href="/blog-post" class="article featured-article featured-article-1">
-                    <img src="./images/featured/featured-1.jpg" alt="" class="article-image">
-                    <span class="article-category">Technology</span>
-
-                    <div class="article-data-container">
-
-                        <div class="article-data">
-                            <span>Dec 5th 2021</span>
-                            <span class="article-data-spacer"></span>
-                            <span>8 Min read</span>
-                        </div>
-
-                        <h3 class="title article-title">Is VR the future?</h3>
-
-                    </div>
-                </a>
-
-                <a href="./post.html" class="article featured-article featured-article-2">
-                    <img src="./images/featured/featured-2.jpg" alt="" class="article-image">
-                    <span class="article-category">Food</span>
-
-                    <div class="article-data-container">
-
-                        <div class="article-data">
-                            <span>Dec 6th 2021</span>
-                            <span class="article-data-spacer"></span>
-                            <span>4 Min read</span>
-                        </div>
-
-                        <h3 class="title article-title">Fine dining 101</h3>
-
-                    </div>
-                </a>
-
-                <a href="./post.html" class="article featured-article featured-article-3">
-                    <img src="./images/featured/featured-3.jpg" alt="" class="article-image">
-                    <span class="article-category">Health</span>
-
-                    <div class="article-data-container">
-
-                        <div class="article-data">
-                            <span>Dec 5th 2021</span>
-                            <span class="article-data-spacer"></span>
-                            <span>5 Min read</span>
-                        </div>
-
-                        <h3 class="title article-title">Natural fat burner</h3>  
-
-                    </div>
-                </a>
-
-            </div>
+            <%}%>
             
             <div class="sidebar d-grid">
 
@@ -210,7 +213,7 @@
     </section>
 
     <!-- Quick read -->
-    <section class="quick-read section">
+    <!-- <section class="quick-read section">
 
         <div class="container">
 
@@ -307,10 +310,10 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <!-- Older posts -->
-    <section class="older-posts section">
+    <!-- <section class="older-posts section">
 
         <div class="container">
 
@@ -440,10 +443,10 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <!-- Popular tags -->
-    <section class="popular-tags section">
+    <!-- <section class="popular-tags section">
 
         <div class="container">
 
@@ -484,10 +487,10 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
 
     <!-- Newsletter -->
-    <section class="newsletter section">
+    <!-- <section class="newsletter section">
 
         <div class="container">
 
@@ -508,7 +511,7 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <%- include('./includes/footer.ejs') %>
 

@@ -4,13 +4,23 @@ const homeController = require("../controller/isAuth")
 
 const router = express.Router()
 
-router.post("/index", homeController.postSignup)
+router.get("/signup",homeController.getSignup)
 
-router.get("/login.html", homeController.getLogin)
+router.post("/login", homeController.postSignup)
 
-router.post("/login", homeController.postLogin)
+router.get("/login", homeController.getLogin)
 
-router.post("/logout", homeController.getLogOut)
+router.post("/index", homeController.postLogin)
+
+router.get("/logout", homeController.getLogOut)
+
+router.get("/reset",homeController.getResetPassword)
+
+router.post("/reset",homeController.postResetPassword)
+
+router.get("/reset/:token",homeController.getNewPassword)
+
+router.post("/newPassword",homeController.postNewPassword)
 
 
 
