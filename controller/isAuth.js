@@ -1,8 +1,10 @@
 const bcrypt = require("bcrypt")
 
+
+const {validationResult} = require('express-validator')
 const User = require("../model/user")
 
-const path = require("path")
+// const path = require("path")
 
 const crypto = require("crypto")
 
@@ -22,6 +24,12 @@ exports.getSignup = (req,res,next)=>{
 exports.postSignup = (req,res,next)=>{
     const email = req.body.email
     const password = req.body.password
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.render("signup",{
+           errorMessage: errors.array()[0].msg
+        })
+    }
     // const confirmPassword = req.body.confirmPassword
     const phone = req.body.phone
     if(email.length > 2 && password.length > 0){
@@ -76,11 +84,19 @@ exports.getLogin = (req,res,next)=>{
 exports.postLogin = (req,res,next) =>{
     const password = req.body.password
     const email = req.body.email
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(422).render("login",{
+            pageTitle:"Login",
+            errorMessage: errors.array()[0].msg
+        })
+    }
     User.findOne({email:email})
      .then(user=>{
 
         if(!user){
-            req.flash("error", "invalid email or password")
+
+           req.flash("error", "invalid email or password")
            return res.redirect("/login")
         }
         
